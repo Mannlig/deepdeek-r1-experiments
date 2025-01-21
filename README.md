@@ -1,4 +1,4 @@
-# DeepSeek Auto Coder 🚀
+# DeepSeek-r1 Auto Coder 🚀
 
 
 This project has two versions:
