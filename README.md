@@ -1,5 +1,11 @@
 # DeepSeek Auto Coder 🚀
 
+
+This project has two versions:
+
+1. `deep_seek_auto_coder.py` - Safe version that only generates code
+2. `deep_seek_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE(If you're not comfortable with this, use the safe version (`deep_seek_auto_coder.py`) instead.))**
+
 An intelligent code generation and improvement system powered by DeepSeek's R1 model. This tool automatically generates, iteratively improves, and enhances Python code based on your requirements, with a special focus on creating visually stunning applications without external dependencies.
 
 ## Features ✨
@@ -76,14 +82,46 @@ python deep_seek_auto_coder.py
 - `generated_code_v0.py`: Initial generation
 - `generated_code_v1.py` to `generated_code_vN.py`: Improved iterations
 
+## Version Comparison 🔄
+
+### Safe Version (`deep_seek_auto_coder.py`):
+
+- Generates and improves code without execution
+- Saves all iterations to files
+- No system access or security risks
+- Best for initial development and exploration
+
+### Executor Version (`deep_seek_auto_coder_executor.py`):
+
+- **⚠️ EXECUTES CODE ON YOUR SYSTEM**
+- Automatically tests generated code
+- Detects and fixes runtime errors
+- 5-second timeout for each execution
+- Includes error correction agent
+- Only saves working versions
+- More efficient iteration process
+
+Choose the version that best suits your needs and security requirements.
+
 ## How It Works 🔄
+
+### Safe Version:
 
 1. **Initial Generation**: Creates base code from your prompt
 2. **Iterative Improvement**: Enhances the code through multiple iterations
 3. **Visual Focus**: Emphasizes beautiful, programmatically generated visuals
 4. **Code Organization**: Maintains clean structure and documentation
-5. **Error Handling**: Includes comprehensive error handling
-6. **Progress Tracking**: Shows colored progress in the terminal
+5. **Progress Tracking**: Shows colored progress in the terminal
+
+### Executor Version:
+
+1. **Code Generation**: Creates initial code from prompt
+2. **Execution Testing**: Runs code with 5-second timeout
+3. **Error Detection**: Captures and analyzes runtime errors
+4. **Automatic Fixing**: Uses AI to fix detected errors
+5. **Verification**: Tests fixed code before proceeding
+6. **Improvement**: Enhances working code
+7. **Safety Features**: Process isolation, timeout, cleanup
 
 ## Example Prompts 📝
 
