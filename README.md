@@ -1,12 +1,34 @@
-# DeepSeek-r1 Auto Coder 🚀
+# AI Auto Coder Collection 🚀
 
 
-This project has two versions:
+### DeepSeek R1 Versions:
 
 1. `deep_seek_auto_coder.py` - Safe version that only generates code
-2. `deep_seek_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE(If you're not comfortable with this, use the safe version (`deep_seek_auto_coder.py`) instead.))**
+2. `deep_seek_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE**
 
-An intelligent code generation and improvement system powered by DeepSeek's R1 model. This tool automatically generates, iteratively improves, and enhances Python code based on your requirements, with a special focus on creating visually stunning applications without external dependencies.
+### OpenAI O1 Versions:
+
+3. `o1_auto_coder.py` - Safe version that only generates code
+4. `o1_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE**
+
+If you're not comfortable with code execution, use the safe versions (`deep_seek_auto_coder.py` or `o1_auto_coder.py`).
+
+An intelligent code generation and improvement system that automatically generates, iteratively improves, and enhances Python code based on your requirements, with a special focus on creating visually stunning applications without external dependencies.
+
+## Model Options 🤖
+
+### DeepSeek R1:
+
+- Available through OpenRouter
+- Specialized in code generation
+- Requires OpenRouter API key
+
+### OpenAI O1:
+
+- Available through OpenAI
+- Can also use o1-mini or gpt-4o variants
+- Requires OpenAI API key
+- Generally faster response times
 
 ## Features ✨
 
@@ -34,7 +56,8 @@ This is one of 400+ fascinating projects in my collection! [Support me on Patreo
 ## Prerequisites 📋
 
 - Python 3.x
-- OpenRouter API key
+- OpenRouter API key (for DeepSeek versions)
+- OpenAI API key (for O1 versions)
 
 ## Installation 🔧
 
@@ -51,30 +74,43 @@ cd <repository-name>
 pip install -r requirements.txt
 ```
 
-3. Set up your OpenRouter API key as an environment variable:
+3. Set up your API key as an environment variable:
 
 ```bash
-# Windows
+# For DeepSeek versions (Windows)
 set OPENROUTER_API_KEY=your_api_key_here
 
-# Linux/Mac
+# For O1 versions (Windows)
+set OPENAI_API_KEY=your_api_key_here
+
+# For DeepSeek versions (Linux/Mac)
 export OPENROUTER_API_KEY=your_api_key_here
+
+# For O1 versions (Linux/Mac)
+export OPENAI_API_KEY=your_api_key_here
 ```
 
 ## Usage 💻
 
-1. Configure your project in `deep_seek_auto_coder.py`:
+1. Choose your preferred version and configure:
 
 ```python
 # User Configuration
 USER_PROMPT = "Your detailed Python program description"
-NUMBER_OF_ITERATIONS = 50  # Number of improvement iterations
+NUMBER_OF_ITERATIONS = 3  # Number of improvement iterations
+MODEL = "o1"  # For O1 versions, can also use "o1-mini" or "gpt-4o"
 ```
 
-2. Run the script:
+2. Run your chosen version:
 
 ```bash
+# DeepSeek versions
 python deep_seek_auto_coder.py
+python deep_seek_auto_coder_executor.py
+
+# O1 versions
+python o1_auto_coder.py
+python o1_auto_coder_executor.py
 ```
 
 3. Find your generated code in the `generated_code` folder:
@@ -84,24 +120,24 @@ python deep_seek_auto_coder.py
 
 ## Version Comparison 🔄
 
-### Safe Version (`deep_seek_auto_coder.py`):
+### Safe Versions (deep_seek_auto_coder.py & o1_auto_coder.py):
 
-- Generates and improves code without execution
-- Saves all iterations to files
+- Generate and improve code without execution
+- Save all iterations to files
 - No system access or security risks
 - Best for initial development and exploration
+- Choose between DeepSeek R1 or OpenAI O1 models
 
-### Executor Version (`deep_seek_auto_coder_executor.py`):
+### Executor Versions (deep_seek_auto_coder_executor.py & o1_auto_coder_executor.py):
 
-- **⚠️ EXECUTES CODE ON YOUR SYSTEM**
-- Automatically tests generated code
-- Detects and fixes runtime errors
+- **⚠️ EXECUTE CODE ON YOUR SYSTEM**
+- Automatically test generated code
+- Detect and fix runtime errors
 - 5-second timeout for each execution
-- Includes error correction agent
-- Only saves working versions
+- Include error correction agent
+- Only save working versions
 - More efficient iteration process
-
-Choose the version that best suits your needs and security requirements.
+- Choose between DeepSeek R1 or OpenAI O1 models
 
 ## How It Works 🔄
 
