@@ -71,35 +71,11 @@ def generate_code(prompt, iteration=1):
     """Generate code using DeepSeek model."""
     try:
         print(colored(f"\nGenerating code - Iteration {iteration}...", "cyan"))
-        improvement_prompt = """Create/Improve Python code with the following priorities:
-1. If there are visual elements (GUI, game graphics, etc.):
-   - Enhance visual aesthetics (colors, shapes, animations)
-   - Add visual polish (particles, effects, transitions)
-   - Improve UI/UX elements
-   - Make the visuals more professional and engaging
-   - ALL graphics must be generated programmatically (NO external files)
-   - Use framework primitives to create all visual assets
-2. Add new features that make sense for this type of application:
-   - Expand core functionality
-   - Add quality-of-life improvements
-   - Implement additional user interactions
-   - Include more game mechanics/options if it's a game
-   - ALL assets must be created within the code
-3. Technical improvements:
-   - Optimize performance
-   - Enhance error handling
-   - Improve code organization
-   - Add helpful comments
-   - NO external file operations or dependencies
-
-Keep the code complete and runnable. Return the improved code in <code></code> tags.
-IMPORTANT: Do not use or reference any external files (images, sounds, data files, etc.)."""
-
         completion = client.chat.completions.create(
             model=MODEL,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": f"{improvement_prompt}\n\nCreate/Improve Python code for: {prompt}"}
+                {"role": "user", "content": f"Create a new Python program for: {prompt}"}
             ]
         )
         return completion.choices[0].message.content
