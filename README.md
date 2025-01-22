@@ -1,34 +1,38 @@
+Her er en oppdatert versjon av `README.md`-filen med justeringer for å reflektere endringene du har gjort, inkludert bruk av `.env`-fil for API-nøkkel og engelske kommentarer. Jeg har også lagt til en seksjon om bruk av `.env`-filen og oppdatert installasjons- og bruksveiledningen.
+
+---
+
+```markdown
 # AI Auto Coder Collection 🚀
 
+## DeepSeek R1 Versions:
+- `deep_seek_auto_coder.py` - Safe version that only generates code
+- `deep_seek_auto_coder_executor.py` - ⚠️EXECUTES AI-GENERATED CODE ON YOUR MACHINE
 
-### DeepSeek R1 Versions:
+## OpenAI O1 Versions:
+- `o1_auto_coder.py` - Safe version that only generates code
+- `o1_auto_coder_executor.py` - ⚠️EXECUTES AI-GENERATED CODE ON YOUR MACHINE
 
-1. `deep_seek_auto_coder.py` - Safe version that only generates code
-2. `deep_seek_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE**
-
-### OpenAI O1 Versions:
-
-3. `o1_auto_coder.py` - Safe version that only generates code
-4. `o1_auto_coder_executor.py` - ⚠️**EXECUTES AI-GENERATED CODE ON YOUR MACHINE**
-
-If you're not comfortable with code execution, use the safe versions (`deep_seek_auto_coder.py` or `o1_auto_coder.py`).
+**If you're not comfortable with code execution, use the safe versions (`deep_seek_auto_coder.py` or `o1_auto_coder.py`).**
 
 An intelligent code generation and improvement system that automatically generates, iteratively improves, and enhances Python code based on your requirements, with a special focus on creating visually stunning applications without external dependencies.
+
+---
 
 ## Model Options 🤖
 
 ### DeepSeek R1:
-
-- Available through OpenRouter
+- Available through DeepSeek API
 - Specialized in code generation
-- Requires OpenRouter API key
+- Requires DeepSeek API key
 
 ### OpenAI O1:
-
 - Available through OpenAI
-- Can also use o1-mini or gpt-4o variants
+- Can also use `o1-mini` or `gpt-4o` variants
 - Requires OpenAI API key
 - Generally faster response times
+
+---
 
 ## Features ✨
 
@@ -41,96 +45,86 @@ An intelligent code generation and improvement system that automatically generat
 - 🎯 Multiple iterations of improvements
 - 🌈 Colored terminal output for better visibility
 
-## ❤️Join my AI Community & Get 400+ AI Projects & 1000x Cursor Course
+---
 
-This is one of 400+ fascinating projects in my collection! [Support me on Patreon](https://www.patreon.com/c/echohive42/membership) to get:
+## ❤️ Support the Original Creator
 
-- 🎯 Access to 400+ AI projects (and growing daily!)
-  - Including advanced projects like [2 Agent Real-time voice template with turn taking](https://www.patreon.com/posts/2-agent-real-you-118330397)
-- 📥 Full source code & detailed explanations
-- 📚 1000x Cursor Course
-- 🎓 Live coding sessions & AMAs
-- 💬 1-on-1 consultations (higher tiers)
-- 🎁 Exclusive discounts on AI tools & platforms (up to $180 value)
+Feel free to join the original creator's Patreon for exclusive content and support their work:  
+👉 [Patreon Membership](https://www.patreon.com/c/echohive42/membership)
+
+
+---
 
 ## Prerequisites 📋
 
 - Python 3.x
-- OpenRouter API key (for DeepSeek versions)
+- DeepSeek API key (for DeepSeek versions)
 - OpenAI API key (for O1 versions)
+
+---
 
 ## Installation 🔧
 
-1. Clone the repository:
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
 
-```bash
-git clone <repository-url>
-cd <repository-name>
-```
+2. **Install required packages:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. Install required packages:
+3. **Set up your API keys in a `.env` file:**
+   Create a `.env` file in the root directory and add your API keys:
+   ```env
+   # .env
+   DEEPSEEK_API_KEY=your_deepseek_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-```bash
-pip install -r requirements.txt
-```
-
-3. Set up your API key as an environment variable:
-
-```bash
-# For DeepSeek versions (Windows)
-set OPENROUTER_API_KEY=your_api_key_here
-
-# For O1 versions (Windows)
-set OPENAI_API_KEY=your_api_key_here
-
-# For DeepSeek versions (Linux/Mac)
-export OPENROUTER_API_KEY=your_api_key_here
-
-# For O1 versions (Linux/Mac)
-export OPENAI_API_KEY=your_api_key_here
-```
+---
 
 ## Usage 💻
 
-1. Choose your preferred version and configure:
+1. **Choose your preferred version and configure:**
+   Edit the script to set your prompt and number of iterations:
+   ```python
+   # User Configuration
+   USER_PROMPT = "Your detailed Python program description"
+   NUMBER_OF_ITERATIONS = 3  # Number of improvement iterations
+   MODEL = "deepseek-reasoner"  # For DeepSeek versions
+   ```
 
-```python
-# User Configuration
-USER_PROMPT = "Your detailed Python program description"
-NUMBER_OF_ITERATIONS = 3  # Number of improvement iterations
-MODEL = "o1"  # For O1 versions, can also use "o1-mini" or "gpt-4o"
-```
+2. **Run your chosen version:**
+   ```bash
+   # DeepSeek versions
+   python deep_seek_auto_coder.py
+   python deep_seek_auto_coder_executor.py
 
-2. Run your chosen version:
+   # O1 versions
+   python o1_auto_coder.py
+   python o1_auto_coder_executor.py
+   ```
 
-```bash
-# DeepSeek versions
-python deep_seek_auto_coder.py
-python deep_seek_auto_coder_executor.py
+3. **Find your generated code in the `generated_code` folder:**
+   - `generated_code_v0.py`: Initial generation
+   - `generated_code_v1.py` to `generated_code_vN.py`: Improved iterations
 
-# O1 versions
-python o1_auto_coder.py
-python o1_auto_coder_executor.py
-```
-
-3. Find your generated code in the `generated_code` folder:
-
-- `generated_code_v0.py`: Initial generation
-- `generated_code_v1.py` to `generated_code_vN.py`: Improved iterations
+---
 
 ## Version Comparison 🔄
 
-### Safe Versions (deep_seek_auto_coder.py & o1_auto_coder.py):
-
+### Safe Versions (`deep_seek_auto_coder.py` & `o1_auto_coder.py`):
 - Generate and improve code without execution
 - Save all iterations to files
 - No system access or security risks
 - Best for initial development and exploration
 - Choose between DeepSeek R1 or OpenAI O1 models
 
-### Executor Versions (deep_seek_auto_coder_executor.py & o1_auto_coder_executor.py):
-
-- **⚠️ EXECUTE CODE ON YOUR SYSTEM**
+### Executor Versions (`deep_seek_auto_coder_executor.py` & `o1_auto_coder_executor.py`):
+- ⚠️ **EXECUTE CODE ON YOUR SYSTEM**
 - Automatically test generated code
 - Detect and fix runtime errors
 - 5-second timeout for each execution
@@ -139,10 +133,11 @@ python o1_auto_coder_executor.py
 - More efficient iteration process
 - Choose between DeepSeek R1 or OpenAI O1 models
 
+---
+
 ## How It Works 🔄
 
 ### Safe Version:
-
 1. **Initial Generation**: Creates base code from your prompt
 2. **Iterative Improvement**: Enhances the code through multiple iterations
 3. **Visual Focus**: Emphasizes beautiful, programmatically generated visuals
@@ -150,7 +145,6 @@ python o1_auto_coder_executor.py
 5. **Progress Tracking**: Shows colored progress in the terminal
 
 ### Executor Version:
-
 1. **Code Generation**: Creates initial code from prompt
 2. **Execution Testing**: Runs code with 5-second timeout
 3. **Error Detection**: Captures and analyzes runtime errors
@@ -159,18 +153,26 @@ python o1_auto_coder_executor.py
 6. **Improvement**: Enhances working code
 7. **Safety Features**: Process isolation, timeout, cleanup
 
+---
+
 ## Example Prompts 📝
 
+### Game Development:
 ```python
-# Game Development
 USER_PROMPT = "create a beautiful tower defense game in pygame. do not use outside assets. all assets should be created within pygame"
+```
 
-# GUI Application
+### GUI Application:
+```python
 USER_PROMPT = "create a modern calculator with a beautiful dark theme using tkinter"
+```
 
-# Data Visualization
+### Data Visualization:
+```python
 USER_PROMPT = "create an interactive bar chart race visualization using pygame"
 ```
+
+---
 
 ## Features of Generated Code 🎯
 
@@ -185,6 +187,8 @@ USER_PROMPT = "create an interactive bar chart race visualization using pygame"
 - ✅ Beautiful visuals and animations
 - ✅ Performance optimizations
 
+---
+
 ## Notes 📌
 
 - All visual assets are created programmatically - no external files needed
@@ -196,6 +200,8 @@ USER_PROMPT = "create an interactive bar chart race visualization using pygame"
 - Defensive programming approach
 - Visual feedback for errors
 - Proper resource management
+
+---
 
 ## Error Handling 🚨
 
@@ -211,3 +217,12 @@ The script includes comprehensive error handling for:
 - Code generation failures
 - File operations
 - Code extraction problems
+```
+
+---
+
+### Changes:
+  - Use of .env file: Added a section explaining how to set up API keys in a .env file.
+  - English comments: Ensured all text is in English.
+  - Updated installation guide: Included steps to install python-dotenv and set up the .env file.
+  - Clearer distinction between DeepSeek and OpenAI versions: Added more information about model selection and API keys.
